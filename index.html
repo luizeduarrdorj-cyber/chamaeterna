@@ -115,122 +115,10 @@
             margin-right: auto;
         }
 
-        /* Área do Upsell (Placeholder da Hotmart) */
-        .hotmart-placeholder-area {
-            background-color: #f7f7f4;
-            padding: 30px;
-            border-radius: 5px;
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .product-title {
-            font-size: 18px;
-            font-weight: 700;
-            color: #666;
-            margin-bottom: 5px;
-        }
-
-        .product-price {
-            font-size: 18px;
-            font-weight: 800;
-            color: #000;
-        }
-
-        .product-installments {
-            font-size: 11px;
-            color: #555;
-            margin-bottom: 15px;
-        }
-
-        .dropdown-label {
-            font-size: 12px;
-            font-weight: 600;
-            display: block;
-            margin-bottom: 5px;
-            text-align: left;
-            max-width: 400px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        select.installments-select {
-            width: 100%;
-            max-width: 400px;
-            padding: 12px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            background-color: white;
-            font-size: 13px;
-            color: #333;
-            margin-bottom: 25px;
-            outline: none;
-        }
-
-        .btn-buy {
-            display: inline-block;
-            background-color: #4b9b2b;
-            color: white;
-            font-size: 18px;
-            font-weight: 700;
-            text-decoration: none;
-            padding: 18px 20px;
-            border-radius: 6px;
-            width: 100%;
-            max-width: 400px;
-            border: none;
-            cursor: pointer;
-            transition: 0.2s;
-        }
-
-        .btn-buy:hover {
-            background-color: #3d8022;
-        }
-
-        .terms {
-            font-size: 10px;
-            color: #888;
-            margin-top: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-        }
-
-        .decline-link {
-            display: block;
-            margin-top: 25px;
-            color: #d14848;
-            font-size: 13px;
-            font-weight: 700;
-            text-decoration: none;
-        }
-
-        .decline-link:hover {
-            text-decoration: underline;
-        }
-
-        .powered-by {
-            margin-top: 25px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            font-size: 10px;
-            color: #999;
-            font-weight: 600;
-        }
-
-        .powered-by img {
-            height: 16px;
-        }
-
         /* Responsividade */
         @media (max-width: 600px) {
             h1 { font-size: 22px; }
             .subheadline { font-size: 14px; }
-            .hotmart-placeholder-area { padding: 20px 15px; }
-            .btn-buy { font-size: 16px; }
         }
     </style>
 </head>
@@ -281,38 +169,18 @@
         <!-- ========================================== -->
         <!-- ÁREA DO WIDGET DE UPSELL (HOTMART)         -->
         <!-- ========================================== -->
-        <div id="area-hotmart">
-            <div class="hotmart-placeholder-area">
-                <h3 class="product-title">Chama Eterna - Feito por Rosa</h3>
-                <p class="product-price">R$ 97,00</p>
-                <p class="product-installments">ou em 12 vezes de R$ 9,70 no cartão de crédito</p>
+        
+        <!-- HOTMART - Sales Funnel Widget -->
+        <!--- sales funnel container --->
+        <div id="hotmart-sales-funnel"></div>
 
-                <label class="dropdown-label">Selecione o número de parcelas</label>
-                <select class="installments-select">
-                    <option>1x de R$ 97,00</option>
-                    <option>2x de R$ 50,00</option>
-                    <option>12x de R$ 9,70</option>
-                </select>
-
-                <button class="btn-buy">Quero que a Rosa faça por mim</button>
-
-                <div class="terms">
-                    <input type="checkbox" checked disabled>
-                    Entendo que ao clicar no botão, o valor será cobrado no meu cartão de crédito.
-                </div>
-
-                <a href="#" class="decline-link">Quero fazer eu mesma</a>
-
-                <div class="powered-by">
-                    POWERED BY 
-                    <svg viewBox="0 0 100 100" width="16" height="16" xmlns="http://www.w3.org/2000/svg">
-                        <circle cx="50" cy="50" r="50" fill="#f04e23"/>
-                        <circle cx="50" cy="50" r="20" fill="#fff"/>
-                    </svg>
-                    <strong>hotmart</strong>
-                </div>
-            </div>
-        </div>
+        <!--- script load and setup --->
+        <script src="https://checkout.hotmart.com/lib/hotmart-checkout-elements.js"></script>
+        <script>
+        checkoutElements.init('salesFunnel').mount('#hotmart-sales-funnel')
+        </script>
+        <!-- HOTMART - Sales Funnel Widget -->
+        
         <!-- ========================================== -->
 
     </div>
